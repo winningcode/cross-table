@@ -15,7 +15,7 @@ const table = (props) => {
             }
          </tr>
      </thead>);
-
+debugger
    var currenciesValues = props.rows.map(function(row) {
        const cssClass = "icon-flag icon-flag-" + row['base'].toLowerCase();
      return (
@@ -34,7 +34,9 @@ const table = (props) => {
   
    return (<table className="table table-bordered table-hover" width="100%">
        {currencies}
-       {currenciesValues}
+       <tbody>
+        {currenciesValues}
+       </tbody>
      </table>);
 };
 

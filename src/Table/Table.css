@@ -64,10 +64,7 @@ table td:hover{
     background-image: url('../assests/zar.svg')
 }
 
-.colorRed {
-    color: red
-}
 
-.test{
-    color: red
+.sameCurrency{
+    color: #c7c2c2
 }

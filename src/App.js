@@ -12,35 +12,35 @@ class App extends Component {
     columns: ['INR', 'USD', 'GBP', 'JPY','AUD', 'CHF', 'CAD', 'NZD', 'RUB', 'AUD', 'MXN', 'ZAR'],
     rows:[]
   }
-
   
-  constructor( props ) {
-    super( props );
+  componentDidMount () {
+    this.loadData();
   }
 
-  componentWillMount () {
+  loadData(){
+    const currencyRates = [];
     var allColumns  = this.state.columns.join(',');
+    this.state.columns.map(baseCurrency=> currencyRates.push(this.fetchData(baseCurrency, allColumns)))
+    Promise.all(currencyRates)
+      .then((dataArray) => {
+        this.setState({
+          rows: dataArray
+        });
+      })
+    
+  }
 
-    this.state.columns.forEach(function(baseCurrency){
-      
-      axios
+  fetchData(baseCurrency, allColumns){
+    return axios
       .get("/latest?symbols="+ allColumns + "&base=" + baseCurrency)
       .then(response => {
-        const rows = [...this.state.rows];
         const rates = response.data.rates;
         rates['base'] = baseCurrency;
-        rows.push(response.data.rates);
-        
-        this.setState({
-          rows: rows
-        });
+        return response.data.rates;
       })
       .catch(error => {
         console.log(error);
       });
-      
-    }, this);
-    
   }
 
   render() {

@@ -15,7 +15,7 @@ const table = (props) => {
             }
          </tr>
      </thead>);
-debugger
+
    var currenciesValues = props.rows.map(function(row) {
        const cssClass = "icon-flag icon-flag-" + row['base'].toLowerCase();
      return (
@@ -24,7 +24,11 @@ debugger
             <th><i className={cssClass}></i></th>
             <td>1 {row['base']} = <br /> Inverse</td>
             {columns.map(function(column) {
-                return <td>{row[column].toFixed(4)} <br />{row[row['base']].toFixed(4)}</td>; 
+                let sameCurrClass = "";
+                if(row['base'] === column){
+                    sameCurrClass = 'sameCurrency';
+                }
+                return <td className={sameCurrClass}>{row[column].toFixed(4)} <br />{row[row['base']].toFixed(4)}</td>; 
             })}
        </tr>
       

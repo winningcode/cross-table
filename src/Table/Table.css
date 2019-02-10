@@ -1,0 +1,73 @@
+
+tr:nth-child(even) {
+    background-color: #e4e9eb;
+}
+
+th {
+    background-color: #a9c8d4;
+}
+
+table td:hover{
+    background-color:rgb(185, 105, 119);
+}
+
+.icon-flag {
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height:15px;
+}
+
+.icon-flag-inr {
+    background-image: url('../assests/inr.svg')
+}
+
+.icon-flag-aud{
+    background-image: url('../assests/aud.svg')
+}
+
+.icon-flag-cad{
+    background-image: url('../assests/cad.svg')
+}
+
+.icon-flag-chf{
+    background-image: url('../assests/chf.svg')
+}
+
+.icon-flag-gbp{
+    background-image: url('../assests/gbp.svg')
+}
+
+ .icon-flag-jpy{
+    background-image: url('../assests/jpy.svg')
+}
+
+.icon-flag-mxn {
+    background-image: url('../assests/mxn.svg')
+}
+.icon-flag-nzd{
+    background-image: url('../assests/nzd.svg')
+}
+
+.icon-flag-rub{
+    background-image: url('../assests/rub.svg')
+}
+
+.icon-flag-usd{
+    background-image: url('../assests/usd.svg')
+}
+
+.icon-flag-zar{
+    background-image: url('../assests/zar.svg')
+}
+
+.colorRed {
+    color: red
+}
+
+.test{
+    color: red
+}
